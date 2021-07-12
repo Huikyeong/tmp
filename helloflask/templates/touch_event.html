@@ -6,13 +6,20 @@
 </head>
 
 <body>
-	<form action="/" method="get">
-		<script>
-			/*document.addEventListener('click', f);
-			
+
+
+	<script>
+			document.addEventListener('click', f);
+			/*
 			function f(event){
+				var pageX = event.pageX;
+				var pageY = event.pageY;
+				document.coordinates.X.value = pageX;
+				document.coordinates.Y.value = pageY;
+				document.coordinates.submit();
 				console.log(event.pageX, event.pageY);
 			}*/
+			
 			var pageX;
 			var pageY;
 
@@ -20,9 +27,18 @@
 			function f(event){
 				pageX = event.touches[0].pageX;
 				pageY = event.touches[0].pageY;
+				document.coordinates.X.value = pageX;
+				document.coordinates.Y.value = pageY;
+				document.coordinates.submit();
 				console.log(event.touches[0].pageX, event.touches[0].pageY);
 			}
-		</script>
+			
+	</script>
+
+	<form action="/" method="get" name="coordinates">
+		<input type="hidden" name="X">
+		<input type="hidden" name="Y">
 	</form>
+	
 </body>
 </html>

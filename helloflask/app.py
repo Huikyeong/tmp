@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
-# app.debug = True
+#app.debug = True
 '''
 @app.before_request
 def before_request():
@@ -16,17 +16,10 @@ def helloworld2():
 @app.route("/")
 def first():
     if request.method == 'GET':
-        pageX = request.args.get('pageX')
-        pageY = request.args.get('pageY')
-        print(pageX, pageY)
+        x = request.args.get("X")
+        y = request.args.get("Y")
+        print(x, y, flush=True)
     return render_template("touch_event.html")
-
-@app.route("/touch", methods = ['GET'])
-def touch():
-    pageX = request.args.get("pageX")
-    pageY = request.args.get("pageY")
-    print(pageX, pageY)
-    return render_template("touch_event2.html")
 
 
 if __name__ == "__main__":
