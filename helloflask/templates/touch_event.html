@@ -1,21 +1,28 @@
 <!doctype html>
 <html>
 <head>
-  <title>touchevent</title>
+  <title>touch_event</title>
   <meta charset="utf-8">
 </head>
 
 <body>
-	<script>
-		document.addEventListener('click', f);
+	<form action="/" method="get">
+		<script>
+			/*document.addEventListener('click', f);
+			
+			function f(event){
+				console.log(event.pageX, event.pageY);
+			}*/
+			var pageX;
+			var pageY;
 
-		function f(event){
-			console.log(event.clientX, event.clientY);
-		}
-		/* document.addEventListener('touchstart', f);
-		function f(event){
-			console.log(event.clientX, event.clientY);
-		}*/
-	</script>
+			document.addEventListener('touchstart', f);
+			function f(event){
+				pageX = event.touches[0].pageX;
+				pageY = event.touches[0].pageY;
+				console.log(event.touches[0].pageX, event.touches[0].pageY);
+			}
+		</script>
+	</form>
 </body>
 </html>
