@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+  <title>touchevent</title>
+  <meta charset="utf-8">
+</head>
+
+<body>
+	<script>
+		document.addEventListener('click', f);
+
+		function f(event){
+			console.log(event.clientX, event.clientY);
+		}
+		/* document.addEventListener('touchstart', f);
+		function f(event){
+			console.log(event.clientX, event.clientY);
+		}*/
+	</script>
+</body>
+</html>
